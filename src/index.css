@@ -16,3 +16,20 @@
   font-family: DM-Sans-Variable;
   src: url("./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf");
 }
+
+p{
+  font-family: BG-VariableFont;
+
+}
+h1{
+  font-family: DM-Sans-Italic;
+}
+h2{
+  font-family: BG-BOLD;
+}
+
+body{
+  background-color: hsl(243, 96%, 9%);
+  color: white;
+  margin:40px 50px;
+}
