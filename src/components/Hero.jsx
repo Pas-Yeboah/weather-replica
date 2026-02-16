@@ -1,7 +1,11 @@
 import React from 'react'
-import { Search } from 'lucide-react'
+import { Search ,ChevronDown} from 'lucide-react'
 import frame from '../assets/images/bg-today-large.svg'
 import Card from './Card'
+import LongCard from './LongCard'
+import rainCloud from '../assets/images/icon-rain.webp'
+import StrechedCards from './StrechedCards'
+import sunny from '../assets/images/icon-sunny.webp'
 
 const Hero = () => {
   return (
@@ -56,12 +60,113 @@ const Hero = () => {
                     </Card>
 
                 </div>
+                <p className='mt-3'>
+                    Daily forecast
+                </p>
+                <div className='flex justify-between'>
+                    <LongCard
+                    mediumText="Tue"
+                    svg={rainCloud}
+                    smallText="20°"
+                    degree="14°"
+                    />
+
+                     <LongCard
+                    mediumText="Tue"
+                    svg={rainCloud}
+                    smallText="20°"
+                    degree="14°"
+                    />
+                     <LongCard
+                    mediumText="Tue"
+                    svg={rainCloud}
+                    smallText="20°"
+                    degree="14°"
+                    />
+                     <LongCard
+                    mediumText="Tue"
+                    svg={rainCloud}
+                    smallText="20°"
+                    degree="14°"
+                    />
+                     <LongCard
+                    mediumText="Tue"
+                    svg={rainCloud}
+                    smallText="20°"
+                    degree="14°"
+                    />
+                     <LongCard
+                    mediumText="Tue"
+                    svg={rainCloud}
+                    smallText="20°"
+                    degree="14°"
+                    />
+                     <LongCard
+                    mediumText="Tue"
+                    svg={rainCloud}
+                    smallText="20°"
+                    degree="14°"
+                    />
+                </div>
 
             </div>
 
-            {/* My right grid*/}
-            <div className='bg-[hsl(243,23%,24%)] rounded-lg w-full'>
 
+            {/* My right grid */}
+            <div className='flex flex-col bg-[hsl(243,23%,24%)] p-3 rounded-lg w-full'>
+                <div className='p-3 flex justify-between items-center'>
+                    <p>
+                        Hourly forecast
+                    </p>
+                    <div className='px-4 py-3 flex flex-row  items-center gap-2 bg-[hsl(243,23%,30%)] rounded-lg'>
+                        
+                        <span  className='text-sm'>Tuesday</span>
+                        <ChevronDown className='w-3 h-3'/>
+                    </div>
+                </div>
+                <div className='flex flex-col space-y-4 p-2'>
+                    <StrechedCards
+                    svg={sunny}
+                    text="3 PM"
+                    degree="20°"/>
+
+                    <StrechedCards
+                    svg={sunny}
+                    text="3 PM"
+                    degree="20°"/>
+
+                    <StrechedCards
+                    svg={sunny}
+                    text="3 PM"
+                    degree="20°"/>
+
+                    <StrechedCards
+                    svg={sunny}
+                    text="3 PM"
+                    degree="20°"/>
+
+                    <StrechedCards
+                    svg={sunny}
+                    text="3 PM"
+                    degree="20°"/>
+
+                    <StrechedCards
+                    svg={sunny}
+                    text="3 PM"
+                    degree="20°"/>
+
+                    <StrechedCards
+                    svg={sunny}
+                    text="3 PM"
+                    degree="20°"/>
+
+                    <StrechedCards
+                    svg={sunny}
+                    text="3 PM"
+                    degree="20°"/>
+
+                   
+                </div>
             </div>
         </div>
 
