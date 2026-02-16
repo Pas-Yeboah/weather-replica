@@ -1,10 +1,11 @@
 import React from 'react'
 import { Search ,ChevronDown} from 'lucide-react'
-import frame from '../assets/images/bg-today-large.svg'
+//import frame from '../assets/images/bg-today-large.svg'
 import Card from './Card'
 import LongCard from './LongCard'
 import rainCloud from '../assets/images/icon-rain.webp'
 import StrechedCards from './StrechedCards'
+// import { hourlyForecast } from '../data/hourforecast'
 import sunny from '../assets/images/icon-sunny.webp'
 
 const Hero = () => {
@@ -33,8 +34,23 @@ const Hero = () => {
         </div>
         <div className='grid grid-cols-[2fr_1fr] w-full flex-1 mt-10  gap-6'>
             {/* My left grid*/}
-            <div className='flex flex-col rounded-lg w-full '>
-                <img src={frame} alt="" />
+            <div className='flex flex-col w-full   '>
+                <div className='bg-[url("/bg-today-large.svg")] flex justify-between items-center p-5  rounded-lg bg-cover bg-center h-[50%]'>
+                     <div >
+                            <h1 className='font-bold text-2xl'>
+                                Berlin,Germany
+                            </h1>
+                            <p className='text-xs'>
+                                Tuesday, Aug 5,2025
+                            </p>
+                     </div>
+                     <div className='flex gap-6 items-center justify-center'>
+                            <img src={sunny} alt="" className='w-20 h-20' />
+                            <h1 className='text-7xl font-bold'>
+                                20°
+                            </h1>
+                     </div>
+                </div>
                 <div className='flex justify-between'>
                     <Card 
                     smallText="Feels Like"
@@ -125,6 +141,16 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className='flex flex-col space-y-4 p-2'>
+
+                    {/* {
+                        hourlyForecast.map((items)=>(
+                            <>
+                            <StrechedCards svg={items.svg}
+                            text={items.text}
+                            degree={items.degree}/>
+                            </>
+                        ))
+                    } */}
                     <StrechedCards
                     svg={sunny}
                     text="3 PM"
