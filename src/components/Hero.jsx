@@ -32,7 +32,7 @@ const Hero = () => {
             </div>
            
         </div>
-        <div className='grid grid-cols-[2fr_1fr] w-full flex-1 mt-10  gap-6'>
+        <div className='grid  grid-cols-1 md:grid-cols-[2fr_1fr] w-full flex-1 mt-10  gap-6'>
             {/* My left grid*/}
             <div className='flex flex-col w-full   '>
                 <div className='bg-[url("/bg-today-large.svg")] flex justify-between items-center p-5  rounded-lg bg-cover bg-center h-[50%]'>
@@ -51,7 +51,7 @@ const Hero = () => {
                             </h1>
                      </div>
                 </div>
-                <div className='flex justify-between'>
+                <div className='flex  flex-wrap md:flex-nowrap justify-between'>
                     <Card 
                     smallText="Feels Like"
                     bigText="18°">
@@ -79,7 +79,7 @@ const Hero = () => {
                 <p className='mt-3'>
                     Daily forecast
                 </p>
-                <div className='flex justify-between'>
+                <div className='flex  flex-wrap md:flex-nowrap justify-between'>
                     <LongCard
                     mediumText="Tue"
                     svg={rainCloud}
