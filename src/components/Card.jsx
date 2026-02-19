@@ -9,9 +9,7 @@ const Card = ({smallText,bigText}) => {
             <p className=' font-light text-3xl '>
                 {bigText}
             </p>
-            <p>
-              The weather is cold
-            </p>
+            
         
     </div>
   )

@@ -66,7 +66,7 @@ const Hero = () => {
                 className='rounded-lg px-6 py-3 bg-blue-700'
                  onClick={handleSearch}
                 disabled={loading}>
-                    Search
+                    {loading?"Loading...":"Search"}
                 </button>
             </div>
 
@@ -128,16 +128,28 @@ const Hero = () => {
                     Daily forecast
                 </p>
                 <div className='flex  flex-wrap md:flex-nowrap justify-between'>
-
-                    {weather?.daily?.time?.map((day, i) => (
-              <LongCard
-                key={day}
-                mediumText={new Date(day).toLocaleDateString("en-US", { weekday: "short" })}
+                    {(weather?.daily?.time?.length ? weather.daily.time : Array.from({ length: 7 })).map((day, i) => (
+                <LongCard
+                key={day || i}
+                mediumText={
+                    day
+                    ? new Date(day).toLocaleDateString("en-US", { weekday: "short" })
+                    : "—"
+                }
                 svg={rainCloud}
-                smallText={`${Math.round(weather.daily.temperature_2m_max[i])}°`}
-                degree={`${Math.round(weather.daily.temperature_2m_min[i])}°`}
-              />
+                smallText={
+                    day
+                    ? `${Math.round(weather.daily.temperature_2m_max[i])}°`
+                    : "—"
+                }
+                degree={
+                    day
+                    ? `${Math.round(weather.daily.temperature_2m_min[i])}°`
+                    : "—"
+                }
+                />
             ))}
+
                     {/* <LongCard
                     mediumText="Tue"
                     svg={rainCloud}
@@ -199,13 +211,21 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className='flex flex-col space-y-4 p-2'>
-                    {weather?.hourly?.time?.slice(0, 8).map((time, i) => (
-                    <StrechedCards
-                        key={time}
+                        {(weather?.hourly?.time?.length ? weather.hourly.time.slice(0, 8) : Array.from({ length: 8 })).map((time, i) => (
+                        <StrechedCards
+                        key={time || i}
                         svg={sunny}
-                        text={new Date(time).toLocaleTimeString([], { hour: "numeric" })}
-                        degree={`${Math.round(weather.hourly.temperature_2m[i])}°`}
-                    />
+                        text={
+                            time
+                            ? new Date(time).toLocaleTimeString([], { hour: "numeric" })
+                            : "—"
+                        }
+                        degree={
+                            time
+                            ? `${Math.round(weather.hourly.temperature_2m[i])}°`
+                            : "—"
+                        }
+                        />
                     ))}
 
                     
